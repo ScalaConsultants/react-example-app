@@ -1,10 +1,13 @@
 import React from 'react'
 
+import NavbarStyled from './NavbarStyle';
+import Logo from './Logo';
+
 const Navbar = () => {
     return (
-      <div>
-        <h3>Navbar</h3>
-      </div>
+      <NavbarStyled>
+        <Logo>SHOP NAME</Logo>
+      </NavbarStyled>
     )
 }
 
