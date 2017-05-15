@@ -3,22 +3,24 @@ require('styles/App.css');
 
 import React from 'react';
 import Navbar from '../Navbar/Navbar';
+import { Switch, Route } from 'react-router-dom'
 import ProductsList from '../ProductsList/ProductsList'
+//import ShoppingCart from '../ShoppingCart/ShoppingCart'
 
 //let yeomanImage = require('../../images/yeoman.png');
 
-class AppComponent extends React.Component {
-  render() {
-    return (
-      <div className="index">
-        <Navbar/>
-        <ProductsList/>
-      </div>
-    );
-  }
+const App = () => {
+  return (
+    <div className="index">
+      <Navbar/>
+
+      <Switch>
+        <Route exact path='/' component={ProductsList}/>
+        {/*<Route path='/cart' component={ShoppingCart}/>*/}
+      </Switch>
+
+    </div>
+  );
 }
 
-AppComponent.defaultProps = {
-};
-
-export default AppComponent;
+export default App;
