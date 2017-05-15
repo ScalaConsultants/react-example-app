@@ -2,7 +2,7 @@ import React from 'react'
 import products from '../../data/products'
 import ListElement from './ListElement/ListElement'
 import { Link } from 'react-router-dom'
-import Screen from '../../styledComponents/Screen'
+import ProductsListStyle from './ProductListStyle'
 
 const ProductsList = () => {
 
@@ -13,13 +13,13 @@ const ProductsList = () => {
   )
 
   return (
-    <Screen>
-      <h3>Products</h3>
+    <ProductsListStyle>
+      <h2>Products</h2>
 
       <ul>
       {productsList}
       </ul>
-    </Screen>
+    </ProductsListStyle>
   )
 }
 
