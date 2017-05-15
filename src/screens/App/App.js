@@ -1,8 +1,8 @@
 require('normalize.css/normalize.css');
-require('styles/App.css');
+require('./App.css');
 
 import React from 'react';
-import Navbar from '../Navbar/Navbar';
+import Navbar from '../../components/Navbar/Navbar';
 import { Switch, Route } from 'react-router-dom'
 import ProductsList from '../ProductsList/ProductsList'
 import ShoppingCart from '../ShoppingCart/ShoppingCart'
