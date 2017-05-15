@@ -1,9 +1,17 @@
 import React from 'react'
+import products from '../../data/products'
 
 const ProductsList = () => {
-    return (
-      <h2>Products List</h2>
-    )
+
+  const productsList = products.map((product) =>
+    <li>{product.name}</li>
+  )
+
+  return (
+    <ul>
+    {productsList}
+    </ul>
+  )
 }
 
 export default ProductsList
