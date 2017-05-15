@@ -1,6 +1,6 @@
 import React from 'react'
 import products from '../../data/products'
-import ListElement from './ListElement'
+import ListElement from './ListElement/ListElement'
 import { Link } from 'react-router-dom'
 import Screen from '../../styledComponents/Screen'
 
@@ -8,7 +8,7 @@ const ProductsList = () => {
 
   const productsList = products.map((product) =>
     <Link to={`/${product.id}`}>
-      <ListElement>{product.name}</ListElement>
+      <ListElement product={product}/>
     </Link>
   )
 
