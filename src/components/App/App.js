@@ -6,6 +6,8 @@ import Navbar from '../Navbar/Navbar';
 import { Switch, Route } from 'react-router-dom'
 import ProductsList from '../ProductsList/ProductsList'
 import ShoppingCart from '../ShoppingCart/ShoppingCart'
+import ProductDetails from '../ProductDetails/ProductDetails'
+
 
 //let yeomanImage = require('../../images/yeoman.png');
 
@@ -17,6 +19,7 @@ const App = () => {
       <Switch>
         <Route exact path='/' component={ProductsList}/>
         <Route path='/cart' component={ShoppingCart}/>
+        <Route path='/:id' component={ProductDetails}/>
       </Switch>
 
     </div>
