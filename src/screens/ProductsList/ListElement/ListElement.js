@@ -1,11 +1,16 @@
 import React from 'react'
 import ListElementStyle from './ListElementStyle'
+import categories from '../../../data/categories'
 
 const ListElement = (props) => {
-    return (
+
+  const category = categories.filter(category => category.id === props.product.category)[0].name
+
+  return (
       <ListElementStyle>
         <p>{props.product.name}</p>
         <p>{props.product.price}</p>
+        <p>{category}</p>
       </ListElementStyle>
     )
 }
