@@ -11,9 +11,9 @@ const ProductDetails = (props) => {
 
   return (
     <Screen>
-      <h3>Product Details</h3>
-      <p>product: {product.name}</p>
-      <p>price: {product.price}</p>
+      <h3>{product.name}</h3>
+      <p>Price: {product.price}</p>
+      <p>Description: {product.desc}</p>
       <Link to='/'>
         <Button>Back</Button>
       </Link>
