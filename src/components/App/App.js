@@ -2,11 +2,11 @@ require('normalize.css/normalize.css');
 require('./App.css');
 
 import React from 'react';
-import Navbar from '../../components/Navbar/Navbar';
+import Navbar from '../Navbar/Navbar';
 import { Switch, Route } from 'react-router-dom'
-import Shop from '../Shop/Shop'
-import ShoppingCart from '../ShoppingCart/ShoppingCart'
-import ProductDetails from '../ProductDetails/ProductDetails'
+import Shop from '../../screens/Shop/Shop'
+import ShoppingCart from '../../screens/ShoppingCart/ShoppingCart'
+import ProductDetails from '../../screens/ProductDetails/ProductDetails'
 
 //let yeomanImage = require('../../images/yeoman.png');
 
