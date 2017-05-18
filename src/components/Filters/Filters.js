@@ -1,17 +1,23 @@
 import React from 'react'
+import {connect} from 'react-redux'
 import FilterStyle from './FiltersStyle'
 import Button from '../../styledComponents/Button'
-import {sortPriceAsc,sortPriceDes} from './actionCreators'
+import {setProductsSort} from './actionCreators'
 
-const Filters = () => {
+const mapDispatchToProps = (dispatch) => {
+  return {
+    setProductsSort: (sortType) => dispatch(setProductsSort(sortType))
+  }
+}
+const Filters = (props) => {
     return (
       <FilterStyle>
         <h2>Filters</h2>
         <p>Sort by price:</p>
-        <Button>Highest</Button>
-        <Button>Lowest</Button>
+        <Button onClick={() => props.setProductsSort('PRICE_ASC')}>Highest</Button>
+        <Button onClick={() => props.setProductsSort('PRICE_DES')}>Lowest</Button>
       </FilterStyle>
     )
 }
 
-export default Filters
+export default connect(null,mapDispatchToProps)(Filters)

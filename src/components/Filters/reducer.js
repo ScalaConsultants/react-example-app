@@ -7,12 +7,10 @@ const initialState = {
 export function sortProducts(state = initialState, action) {
   switch (action.type) {
     case SET_PRODUCTS_SORT:
-      return [
+      return {
         ...state,
-        {
-          sortProductsType: action.sort
-        }
-      ]
+        sortProductsType: action.sort
+      }
     default:
       return state
   }
