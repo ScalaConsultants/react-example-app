@@ -1,6 +1,7 @@
 import React from 'react'
 import FilterStyle from './FiltersStyle'
 import Button from '../../styledComponents/Button'
+import {sortPriceAsc,sortPriceDes} from './actionCreators'
 
 const Filters = () => {
     return (
