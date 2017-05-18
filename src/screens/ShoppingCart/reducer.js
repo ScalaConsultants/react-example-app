@@ -1,7 +1,7 @@
 import {ADD_TO_CART,REMOVE_FROM_CART} from './actionTypes'
 
 const initialState = {
-  productsInCart:{}
+  productsInCart:[]
 }
 
 export function shoppingCart(state = initialState, action) {
@@ -9,7 +9,7 @@ export function shoppingCart(state = initialState, action) {
     case ADD_TO_CART:
       return {
         ...state,
-        productsInCart: action.product
+        productsInCart: [...state.productsInCart,action.product]
       }
     case REMOVE_FROM_CART:
       return {

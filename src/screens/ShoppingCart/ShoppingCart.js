@@ -20,12 +20,14 @@ const mapStateTopProps = (state) => ({
 const ShoppingCart = (props) => {
     return (
       <Screen>
-        <h2>Your Shopping Cart:</h2>
+        <h2>Your Shopping Cart:</h2>{console.log(props.productsInCart)}
+
         <ul>
-          <li>
-            <h3>{products.filter(product => product.id === props.productsInCart).map(product => product.name)}</h3>
-          </li>
+        {props.productsInCart.map(
+          product => <li>{products.filter( prod => prod.id === product).map(product => product.name)}</li>
+          )}
         </ul>
+
         <Link to='/'>
           <Button>Back</Button>
         </Link>
