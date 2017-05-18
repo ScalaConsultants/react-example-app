@@ -7,7 +7,7 @@ import { Link } from 'react-router-dom'
 const ShoppingCart = () => {
     return (
       <Screen>
-        <h2>Shopping Cart</h2>
+        <h2>Your Shopping Cart:</h2>
 
         <Link to='/'>
           <Button>Back</Button>
