@@ -14,8 +14,8 @@ const Filters = (props) => {
       <FilterStyle>
         <h2>Filters</h2>
         <p>Sort by price:</p>
-        <Button onClick={() => props.setProductsSort('PRICE_ASC')}>Highest</Button>
-        <Button onClick={() => props.setProductsSort('PRICE_DES')}>Lowest</Button>
+        <Button onClick={() => props.setProductsSort('PRICE_ASC')}>Lowest</Button>
+        <Button onClick={() => props.setProductsSort('PRICE_DES')}>Highest</Button>
       </FilterStyle>
     )
 }
