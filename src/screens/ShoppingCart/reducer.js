@@ -14,7 +14,7 @@ export function shoppingCart(state = initialState, action) {
     case REMOVE_FROM_CART:
       return {
         ...state,
-        productsInCart: 'removed everything'
+        productsInCart: state.productsInCart.filter(product => product !== action.product)
       }
     default:
       return state

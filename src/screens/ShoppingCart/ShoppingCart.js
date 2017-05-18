@@ -20,12 +20,12 @@ const mapStateTopProps = (state) => ({
 const ShoppingCart = (props) => {
     return (
       <Screen>
-        <h2>Your Shopping Cart:</h2>{console.log(props.productsInCart)}
-
+        <h2>Your Shopping Cart:</h2>
+        {console.log(props.productsInCart)}
         <ul>
-        {props.productsInCart.map(
-          product => <li>{products.filter( prod => prod.id === product).map(product => product.name)}</li>
-          )}
+        {props.productsInCart ? props.productsInCart.map(
+          product => <li>{products.filter( prod => prod.id === product).map(product => product.name)}<button onClick={() => props.removeFromCart(product)}>remove</button></li>
+          ) : 'Cart is empty'}
         </ul>
 
         <Link to='/'>
