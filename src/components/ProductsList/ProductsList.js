@@ -6,7 +6,7 @@ import ProductsListStyle from './ProductListStyle'
 
 const ProductsList = () => {
 
-  const productsList = products.map((product) =>
+  const productsList = products.sort((a,b) => a.price - b.price).map((product) =>
     <Link to={`/${product.id}`}>
       <ListElement product={product}/>
     </Link>
