@@ -29,10 +29,12 @@ const ProductsList = (props) => {
   }
 
   const productsList = products.sort(sortProducts(props.sortProductsType)).map((product) =>
+  <div>
     <Link to={`/${product.id}`}>
       <ListElement product={product}/>
-      <button onClick={() => props.addToCart(product.id,2)}>add to cart</button>
     </Link>
+    <button onClick={() => props.addToCart(product.id,2)}>add to cart</button>
+  </div>
   )
 
   return (
