@@ -12,8 +12,7 @@ const mapDispatchToProps = (dispatch) => {
 const Filters = (props) => {
     return (
       <FilterStyle>
-        <h2>Filters</h2>
-        <p>Sort by price:</p>
+        <span>Sort by price:</span>
         <Button onClick={() => props.setProductsSort('PRICE_ASC')}>Lowest</Button>
         <Button onClick={() => props.setProductsSort('PRICE_DES')}>Highest</Button>
       </FilterStyle>
