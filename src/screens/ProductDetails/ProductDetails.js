@@ -7,7 +7,6 @@ import {connect} from 'react-redux'
 import { Link } from 'react-router-dom'
 import {addToCart} from '../../screens/ShoppingCart/actionCreators'
 
-
 const mapDispatchToProps = (dispatch) => {
   return {
     addToCart: (product,amount) => dispatch(addToCart(product,amount))
@@ -28,12 +27,12 @@ const ProductDetails = (props) => {
       <p>Category: {category}</p>
       <p>Description: {product.desc}</p>
 
-      <button onClick={() => props.addToCart(product.id,2)}>
-        add to cart
-      </button>
+      <Button onClick={() => props.addToCart(product.id,2)}>
+        Add to cart
+      </Button>
 
       <Link to='/'>
-        <Button>Back</Button>
+        <Button>Back to shop</Button>
       </Link>
     </Screen>
     )
