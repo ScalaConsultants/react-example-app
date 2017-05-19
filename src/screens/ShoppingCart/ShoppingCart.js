@@ -18,6 +18,7 @@ const mapStateTopProps = (state) => ({
 })
 
 const ShoppingCart = (props) => {
+  let sum = 0;
     return (
       <Screen>
         <h2>Your Shopping Cart:</h2>
@@ -25,12 +26,33 @@ const ShoppingCart = (props) => {
         <ShoppingCartList>
         {props.productsInCart.length!== 0 ? props.productsInCart.map(
           product =>
-            <li>{products.filter( prod => prod.id === product).map(product => product.name)}
-              <Button onClick={() => props.removeFromCart(product)}>
-                remove
-              </Button>
+            <li>
+              <span className="productName">
+                {products.filter( prod => prod.id === product).map(product => product.name)}
+              </span>
+
+              <div className="price">
+                <span>
+                  price: {products.filter( prod => prod.id === product).map(product => {
+                  sum+= product.price
+                  return product.price
+                  }
+                )}
+                </span>
+
+                <Button onClick={() => props.removeFromCart(product)}>
+                  remove
+                </Button>
+              </div>
+              <div style={{clear:'both'}}/>
             </li>
         ) : <li>Cart is empty</li>}
+
+        <li>
+          <div className="price">
+            Total:{sum}
+          </div>
+        </li>
         </ShoppingCartList>
 
         <Link to='/'>
