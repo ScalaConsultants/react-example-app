@@ -8,9 +8,12 @@ const ListElement = (props) => {
 
   return (
       <ListElementStyle>
-        <p>{props.product.name}</p>
-        <p>{props.product.price}</p>
-        <p>{category}</p>
+        <div className="image"/>
+        <div className="content">
+          <h3>{props.product.name}</h3>
+          <p>price: {props.product.price}</p>
+          <p>category: {category}</p>
+        </div>
       </ListElementStyle>
     )
 }

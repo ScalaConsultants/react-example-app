@@ -29,8 +29,6 @@ const ProductsList = (props) => {
 
   return (
     <ProductsListStyle>
-      <h2>Products</h2>
-
       <ul>
       {productsList}
       </ul>
