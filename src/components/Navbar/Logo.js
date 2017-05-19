@@ -5,7 +5,7 @@ const Logo = styled.span`
     color: rgb(255, 255, 255);
     font-size: 46px;
     float: left;
-    margin: 15px 30px;
+    margin: 15px 0;
 `;
 
 export default Logo;
