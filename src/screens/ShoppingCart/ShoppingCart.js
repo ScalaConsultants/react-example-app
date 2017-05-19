@@ -5,7 +5,7 @@ import Button from '../../styledComponents/Button'
 import { Link } from 'react-router-dom'
 import {removeFromCart} from './actionCreators'
 import products from '../../data/products'
-
+import ShoppingCartList from './ShoppingCartList'
 
 const mapDispatchToProps = (dispatch) => {
   return {
@@ -21,15 +21,20 @@ const ShoppingCart = (props) => {
     return (
       <Screen>
         <h2>Your Shopping Cart:</h2>
-        {console.log(props.productsInCart)}
-        <ul>
-        {props.productsInCart ? props.productsInCart.map(
-          product => <li>{products.filter( prod => prod.id === product).map(product => product.name)}<button onClick={() => props.removeFromCart(product)}>remove</button></li>
-          ) : 'Cart is empty'}
-        </ul>
+
+        <ShoppingCartList>
+        {props.productsInCart.length!== 0 ? props.productsInCart.map(
+          product =>
+            <li>{products.filter( prod => prod.id === product).map(product => product.name)}
+              <Button onClick={() => props.removeFromCart(product)}>
+                remove
+              </Button>
+            </li>
+        ) : <li>Cart is empty</li>}
+        </ShoppingCartList>
 
         <Link to='/'>
-          <Button>Back</Button>
+          <Button>Back to shop</Button>
         </Link>
       </Screen>
     )
