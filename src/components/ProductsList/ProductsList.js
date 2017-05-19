@@ -5,17 +5,10 @@ import {connect} from 'react-redux'
 import { Link } from 'react-router-dom'
 import ProductsListStyle from './ProductListStyle'
 import {SortTypes} from '../Filters/actionTypes'
-import {addToCart} from '../../screens/ShoppingCart/actionCreators'
 
 const mapStateTopProps = (state) => ({
   sortProductsType:state.sortProducts.sortProductsType
 })
-
-const mapDispatchToProps = (dispatch) => {
-  return {
-    addToCart: (product,amount) => dispatch(addToCart(product,amount))
-  }
-}
 
 const ProductsList = (props) => {
 
@@ -29,12 +22,9 @@ const ProductsList = (props) => {
   }
 
   const productsList = products.sort(sortProducts(props.sortProductsType)).map((product) =>
-  <div>
     <Link to={`/${product.id}`}>
       <ListElement product={product}/>
     </Link>
-    <button onClick={() => props.addToCart(product.id,2)}>add to cart</button>
-  </div>
   )
 
   return (
@@ -48,4 +38,4 @@ const ProductsList = (props) => {
   )
 }
 
-export default connect(mapStateTopProps,mapDispatchToProps)(ProductsList)
+export default connect(mapStateTopProps)(ProductsList)
