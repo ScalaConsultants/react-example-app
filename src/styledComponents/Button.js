@@ -7,10 +7,7 @@ const Button = styled.button`
     border: 1px solid white;
     background-color: transparent;
     font-size: 16px;
-
-    &:focus {
-      box-shadow:inset 0 0 4px 1px #848484;
-    }
+    box-shadow: ${props => props.active ? 'inset 0 0 4px 1px #848484' : 'none'};
 `;
 
 export default Button;
