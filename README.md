@@ -1,4 +1,4 @@
-#Example React App - Online shop
+# Example React App - Online shop
 
 This project is example app for people who start learning React. It's simple online shop app without any backend. Data is loaded from js file, displayed on screen with ability to sort and add/remove from shopping cart.
 
