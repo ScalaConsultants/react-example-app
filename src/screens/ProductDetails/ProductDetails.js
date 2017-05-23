@@ -16,8 +16,8 @@ const mapDispatchToProps = (dispatch) => {
 const ProductDetails = (props) => {
 
   const id = parseInt(props.match.params.id, 10)
-  const product = products.filter(product => product.id === id)[0]
-  const category = categories.filter(category => category.id === product.category)[0].name
+  const product = products.find(product => product.id === id)
+  const category = categories.find(category => category.id === product.category).name
 
   return (
     <Screen>
@@ -27,7 +27,7 @@ const ProductDetails = (props) => {
       <p>Category: {category}</p>
       <p>Description: {product.desc}</p>
 
-      <Button onClick={() => props.addToCart(product.id,2)}>
+      <Button onClick={() => props.addToCart(product.id)}>
         Add to cart
       </Button>
 

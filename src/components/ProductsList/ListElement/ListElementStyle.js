@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import styled from 'styled-components'
 
 // language=SCSS prefix=dummy{ suffix=}
 const ListElement = styled.li`
@@ -34,6 +34,6 @@ const ListElement = styled.li`
     & p{
       color:black;
     }
-`;
+`
 
-export default ListElement;
+export default ListElement

@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import styled from 'styled-components'
 
 // language=SCSS prefix=dummy{ suffix=}
 const Logo = styled.span`
@@ -6,6 +6,6 @@ const Logo = styled.span`
     font-size: 46px;
     float: left;
     margin: 15px 0;
-`;
+`
 
-export default Logo;
+export default Logo

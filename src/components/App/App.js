@@ -1,8 +1,8 @@
-require('normalize.css/normalize.css');
-require('./App.css');
+require('normalize.css/normalize.css')
+require('./App.css')
 
-import React from 'react';
-import Navbar from '../Navbar/Navbar';
+import React from 'react'
+import Navbar from '../Navbar/Navbar'
 import { Switch, Route } from 'react-router-dom'
 import Shop from '../../screens/Shop/Shop'
 import ShoppingCart from '../../screens/ShoppingCart/ShoppingCart'
@@ -22,7 +22,7 @@ const App = () => {
       </Switch>
 
     </div>
-  );
+  )
 }
 
-export default App;
+export default App
