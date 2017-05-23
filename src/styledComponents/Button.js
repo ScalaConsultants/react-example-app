@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import styled from 'styled-components'
 
 // language=SCSS prefix=dummy{ suffix=}
 const Button = styled.button`
@@ -8,6 +8,6 @@ const Button = styled.button`
     background-color: transparent;
     font-size: 16px;
     box-shadow: ${props => props.active ? 'inset 0 0 4px 1px #848484' : 'none'};
-`;
+`
 
-export default Button;
+export default Button

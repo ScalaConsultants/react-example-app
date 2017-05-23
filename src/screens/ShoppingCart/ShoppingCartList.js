@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import styled from 'styled-components'
 
 // language=SCSS prefix=dummy{ suffix=}
 const ShoppingCartList = styled.ul`
@@ -14,6 +14,6 @@ const ShoppingCartList = styled.ul`
     & .price{
       float:right;
     }
-`;
+`
 
-export default ShoppingCartList;
+export default ShoppingCartList

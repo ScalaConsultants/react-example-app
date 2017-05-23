@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import styled from 'styled-components'
 
 // language=SCSS prefix=dummy{ suffix=}
 const ProductsListStyle = styled.div`
@@ -7,6 +7,6 @@ const ProductsListStyle = styled.div`
   & ul{
     padding: 0 20px;
   }
-`;
+`
 
-export default ProductsListStyle;
+export default ProductsListStyle
