@@ -54,7 +54,7 @@ const ShoppingCart = (props) => {
 
         {productsTable.length!== 0 ? productsTable.map(
           product =>
-            <li>
+            <li key={product[3]}>
               <span className="productName">
                 {product[0]}
               </span>
