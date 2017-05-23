@@ -4,7 +4,7 @@ import Screen from '../../styledComponents/Screen'
 import Button from '../../styledComponents/Button'
 import { Link } from 'react-router-dom'
 import {removeFromCart} from './actionCreators'
-import products from '../../data/products'
+import productsData from '../../data/products'
 import ShoppingCartList from './ShoppingCartList'
 
 const mapDispatchToProps = (dispatch) => {
@@ -17,30 +17,58 @@ const mapStateTopProps = (state) => ({
   productsInCart:state.shoppingCart.productsInCart
 })
 
+
 const ShoppingCart = (props) => {
-  let sum = 0;
+
+  const products= {}
+
+  props.productsInCart.map(product => {
+    products[product] ? products[product]++ : products[product] = 1
+  })
+
+  let sum = 0
+  let productsTable = []
+
+  for(const product in products){
+
+    const name =
+      productsData.filter(
+        prod => prod.id === parseInt(product)
+      )[0].name
+
+    const price =
+      productsData.filter(
+        prod => prod.id === parseInt(product)
+      )[0].price
+
+    sum += price * products[product]
+
+    productsTable.push([name,price,products[product],parseInt(product)])
+  }
+
     return (
       <Screen>
         <h2>Your Shopping Cart:</h2>
 
         <ShoppingCartList>
-        {props.productsInCart.length!== 0 ? props.productsInCart.map(
+
+        {productsTable.length!== 0 ? productsTable.map(
           product =>
             <li>
               <span className="productName">
-                {products.filter( prod => prod.id === product).map(product => product.name)}
+                {product[0]}
+              </span>
+
+              <span>
+                quantity: {product[2]}
               </span>
 
               <div className="price">
                 <span>
-                  price: {products.filter( prod => prod.id === product).map(product => {
-                  sum+= product.price
-                  return product.price
-                  }
-                )}
+                  price: {product[1]}
                 </span>
 
-                <Button onClick={() => props.removeFromCart(product)}>
+                <Button onClick={() => props.removeFromCart(product[3])}>
                   remove
                 </Button>
               </div>
