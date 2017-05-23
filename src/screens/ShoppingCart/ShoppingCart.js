@@ -32,14 +32,14 @@ const ShoppingCart = (props) => {
   for(const product in products){
 
     const name =
-      productsData.filter(
+      productsData.find(
         prod => prod.id === parseInt(product)
-      )[0].name
+      ).name
 
     const price =
-      productsData.filter(
+      productsData.find(
         prod => prod.id === parseInt(product)
-      )[0].price
+      ).price
 
     sum += price * products[product]
 

@@ -4,7 +4,7 @@ import categories from '../../../data/categories'
 
 const ListElement = (props) => {
 
-  const category = categories.filter(category => category.id === props.product.category)[0].name
+  const category = categories.find(category => category.id === props.product.category).name
 
   return (
       <ListElementStyle>

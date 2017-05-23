@@ -3,7 +3,6 @@ import Screen from '../../styledComponents/Screen'
 import Filters from '../../components/Filters/Filters'
 import ProductsList from '../../components/ProductsList/ProductsList'
 
-
 const Shop = () => {
     return (
       <Screen>
