@@ -18,12 +18,12 @@ const Filters = (props) => {
       <FilterStyle>
         <span>Sort by price:</span>
 
-        <Button active={props.sortType === 'PRICE_ASC' ? 'active' : false}
+        <Button isActive={props.sortType === 'PRICE_ASC'}
                 onClick={() => props.setProductsSort('PRICE_ASC')}>
           Lowest
         </Button>
 
-        <Button active={props.sortType === 'PRICE_DES' ? 'active' : false}
+        <Button isActive={props.sortType === 'PRICE_DES'}
                 onClick={() => props.setProductsSort('PRICE_DES')}>
           Highest
         </Button>
