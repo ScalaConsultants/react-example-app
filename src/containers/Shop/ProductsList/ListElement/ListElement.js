@@ -1,6 +1,6 @@
 import React from 'react'
 import ListElementStyle from './ListElementStyle'
-import categories from '../../../data/categories'
+import categories from '../../../../lib/data/categories'
 
 const ListElement = (props) => {
 

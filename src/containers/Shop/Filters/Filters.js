@@ -1,7 +1,7 @@
 import React from 'react'
 import {connect} from 'react-redux'
 import FilterStyle from './FiltersStyle'
-import Button from '../../styledComponents/Button'
+import Button from '../../../components/Button'
 import {setProductsSort} from './actionCreators'
 
 const mapStateTopProps = (state) => ({

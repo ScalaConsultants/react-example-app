@@ -1,6 +1,6 @@
 import {combineReducers} from 'redux'
-import {sortProducts} from './components/Filters/reducer'
-import {shoppingCart} from './screens/ShoppingCart/reducer'
+import {sortProducts} from './containers/Shop/Filters/reducer'
+import {shoppingCart} from './containers/ShoppingCart/reducer'
 
 export default combineReducers({
   sortProducts,

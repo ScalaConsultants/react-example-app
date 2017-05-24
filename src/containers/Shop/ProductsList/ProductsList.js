@@ -1,5 +1,5 @@
 import React from 'react'
-import products from '../../data/products'
+import products from '../../../lib/data/products'
 import ListElement from './ListElement/ListElement'
 import {connect} from 'react-redux'
 import { Link } from 'react-router-dom'

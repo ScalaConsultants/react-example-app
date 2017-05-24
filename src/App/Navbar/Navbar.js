@@ -13,7 +13,7 @@ const Navbar = () => {
         </Link>
 
         <Link to='/cart'>
-          <CartButton src="../../images/cart.png"/>
+          <CartButton src="../../lib/images/cart.png"/>
         </Link>
 
       </NavbarStyled>

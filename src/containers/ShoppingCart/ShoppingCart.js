@@ -1,10 +1,10 @@
 import React from 'react'
 import {connect} from 'react-redux'
-import Screen from '../../styledComponents/Screen'
-import Button from '../../styledComponents/Button'
+import Screen from '../../components/Screen'
+import Button from '../../components/Button'
 import { Link } from 'react-router-dom'
 import {removeFromCart} from './actionCreators'
-import productsData from '../../data/products'
+import productsData from '../../lib/data/products'
 import ShoppingCartList from './ShoppingCartList'
 
 const mapDispatchToProps = (dispatch) => {
