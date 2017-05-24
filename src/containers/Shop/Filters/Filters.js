@@ -1,8 +1,14 @@
 import React from 'react'
 import {connect} from 'react-redux'
-import FilterStyle from './FiltersStyle'
 import Button from '../../../components/Button'
 import {setProductsSort} from './actionCreators'
+import styled from 'styled-components'
+
+// language=SCSS prefix=dummy{ suffix=}
+const FilterStyle = styled.div`
+    background-color: rgb(221,221,221);
+    padding: 0 40px;
+`
 
 const mapStateTopProps = (state) => ({
   sortType:state.sortProducts.sortProductsType

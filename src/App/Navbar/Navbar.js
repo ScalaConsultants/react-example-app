@@ -1,12 +1,19 @@
 import React from 'react'
-import NavbarStyled from './NavbarStyle'
+import styled from 'styled-components'
 import Logo from './Logo'
 import CartButton from './CartButton'
 import { Link } from 'react-router-dom'
 
+// language=SCSS prefix=dummy{ suffix=}
+const NavbarStyle = styled.div`
+    height: 80px;
+    background-color: rgb(24,24,24);
+    padding:0 180px;
+`
+
 const Navbar = () => {
     return (
-      <NavbarStyled>
+      <NavbarStyle>
 
         <Link to='/'>
           <Logo>SHOP NAME</Logo>
@@ -16,7 +23,7 @@ const Navbar = () => {
           <CartButton src="../../lib/images/cart.png"/>
         </Link>
 
-      </NavbarStyled>
+      </NavbarStyle>
     )
 }
 
