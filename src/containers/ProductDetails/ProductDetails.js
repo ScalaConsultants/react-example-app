@@ -5,7 +5,7 @@ import products from '../../lib/data/products'
 import categories from '../../lib/data/categories'
 import {connect} from 'react-redux'
 import { Link } from 'react-router-dom'
-import {addToCart} from '..//ShoppingCart/actionCreators'
+import {addToCart} from '../ShoppingCart/actionCreators'
 
 const mapDispatchToProps = (dispatch) => {
   return {
