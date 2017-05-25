@@ -11,7 +11,7 @@ const mapDispatchToProps = (dispatch) => {
 
 const CartItem = (props) => {
     return (
-      <li key={props.product[3]}>
+      <li>
               <span className="productName">
                 {props.product[0]}
               </span>
