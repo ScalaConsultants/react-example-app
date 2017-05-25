@@ -3,15 +3,9 @@ import {connect} from 'react-redux'
 import Screen from '../../components/Screen'
 import Button from '../../components/Button'
 import { Link } from 'react-router-dom'
-import {removeFromCart} from './actionCreators'
 import productsData from '../../lib/data/products'
 import ShoppingCartList from './ShoppingCartList'
-
-const mapDispatchToProps = (dispatch) => {
-  return {
-    removeFromCart: (product) => dispatch(removeFromCart(product))
-  }
-}
+import CartItem from './CartItem/CartItem'
 
 const mapStateTopProps = (state) => ({
   productsInCart:state.shoppingCart.productsInCart
@@ -54,26 +48,7 @@ const ShoppingCart = (props) => {
 
         {productsTable.length!== 0 ? productsTable.map(
           product =>
-            <li key={product[3]}>
-              <span className="productName">
-                {product[0]}
-              </span>
-
-              <span>
-                quantity: {product[2]}
-              </span>
-
-              <div className="price">
-                <span>
-                  price: {product[1]}
-                </span>
-
-                <Button onClick={() => props.removeFromCart(product[3])}>
-                  remove
-                </Button>
-              </div>
-              <div style={{clear:'both'}}/>
-            </li>
+            <CartItem product={product}/>
         ) : <li>Cart is empty</li>}
 
         <li>
@@ -90,4 +65,4 @@ const ShoppingCart = (props) => {
     )
 }
 
-export default connect(mapStateTopProps,mapDispatchToProps)(ShoppingCart)
+export default connect(mapStateTopProps)(ShoppingCart)
