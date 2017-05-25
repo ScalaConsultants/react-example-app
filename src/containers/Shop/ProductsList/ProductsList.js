@@ -1,6 +1,6 @@
 import React from 'react'
 import products from '../../../lib/data/products'
-import ListElement from './ListElement/ListElement'
+import ListElement from './ListItem/ListItem'
 import {connect} from 'react-redux'
 import { Link } from 'react-router-dom'
 import {SortTypes} from '../Filters/actionTypes'
