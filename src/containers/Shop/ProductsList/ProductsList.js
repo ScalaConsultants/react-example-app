@@ -30,11 +30,18 @@ const ProductsList = (props) => {
     }
   }
 
-  const productsList = products.sort(sortProducts(props.sortProductsType)).map((product) =>
-    <Link key={product.id} to={`/${product.id}`}>
-      <ListElement product={product}/>
-    </Link>
-  )
+  const productsList =
+    products.sort(
+      sortProducts(props.sortProductsType)
+    ).map(
+      (product) =>
+        <Link
+          key={product.id}
+          to={`/${product.id}`}>
+          <ListElement
+            product={product}/>
+        </Link>
+    )
 
   return (
     <ProductsListStyle>

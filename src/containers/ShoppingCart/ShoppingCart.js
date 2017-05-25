@@ -37,7 +37,10 @@ const ShoppingCart = (props) => {
   }
 
   return (
-    <ShoppingCartView sum={sum} productsTable={productsTable}/>
+    <ShoppingCartView
+      sum={sum}
+      productsTable={productsTable}
+    />
   )
 }
 

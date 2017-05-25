@@ -12,22 +12,25 @@ const mapDispatchToProps = (dispatch) => {
 const CartItem = (props) => {
     return (
       <li>
-              <span className="productName">
-                {props.product[0]}
-              </span>
+        <span className="productName">
+          {props.product[0]}
+        </span>
 
         <span>
-                quantity: {props.product[2]}
-              </span>
+          quantity: {props.product[2]}
+        </span>
 
         <div className="price">
-                <span>
-                  price: {props.product[1]}
-                </span>
+          <span>
+            price: {props.product[1]}
+          </span>
 
-          <Button onClick={() => props.removeFromCart(props.product[3])}>
+          <Button onClick={
+            () => props.removeFromCart(props.product[3])
+          }>
             remove
           </Button>
+
         </div>
         <div style={{clear:'both'}}/>
       </li>
