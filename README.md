@@ -1,4 +1,4 @@
-# ![](https://img.shields.io/badge/version-0.0.3-blue.svg)
+![](https://img.shields.io/badge/version-0.0.3-blue.svg)
 
 # Example React App - Online shop
 
