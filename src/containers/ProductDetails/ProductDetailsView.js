@@ -11,8 +11,8 @@ const ProductDetailsView = (props) => {
         <p>Price: {props.product.price}</p>
         <p>Category: {props.category}</p>
         <p>Description: {props.product.desc}</p>
-        {console.log(props.product.id)}
-        <Button onClick={() => props.addToCart(props.product.id)}>
+
+        <Button onClick={() => props.addToCart()}>
           Add to cart
         </Button>
 
