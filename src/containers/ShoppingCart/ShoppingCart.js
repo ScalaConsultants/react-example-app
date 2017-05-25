@@ -7,39 +7,37 @@ const mapStateTopProps = (state) => ({
   productsInCart:state.shoppingCart.productsInCart
 })
 
-
 const ShoppingCart = (props) => {
 
-  const products= {}
+  const products = []
 
-  props.productsInCart.map(product => {
-    products[product] ? products[product]++ : products[product] = 1
-  })
+  props.productsInCart.map(
+    id => products.find(
+      product => product.id === id
+    ) ? products.find(product => product.id === id).quantity++ : products.push({id,quantity:1})
+  )
 
   let sum = 0
-  let productsTable = []
 
-  for(const product in products){
+  for(const product of products){
 
-    const name =
+    product.name =
       productsData.find(
-        prod => prod.id === parseInt(product)
+        prod => prod.id === product.id
       ).name
 
-    const price =
+    product.price =
       productsData.find(
-        prod => prod.id === parseInt(product)
+        prod => prod.id === product.id
       ).price
 
-    sum += price * products[product]
-
-    productsTable.push([name,price,products[product],parseInt(product)])
+    sum+=product.quantity*product.price
   }
 
   return (
     <ShoppingCartView
       sum={sum}
-      productsTable={productsTable}
+      products={products}
     />
   )
 }

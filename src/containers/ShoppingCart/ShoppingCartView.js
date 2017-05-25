@@ -28,9 +28,9 @@ const ShoppingCartView = (props) => {
 
         <ShoppingCartList>
 
-          {props.productsTable.length!== 0 ? props.productsTable.map(
+          {props.products.length!== 0 ? props.products.map(
             product =>
-              <CartItem key={product[3]} product={product}/>
+              <CartItem key={product.id} product={product}/>
           ) : <li>Cart is empty</li>}
 
           <li>

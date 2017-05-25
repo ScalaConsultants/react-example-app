@@ -13,20 +13,20 @@ const CartItem = (props) => {
     return (
       <li>
         <span className="productName">
-          {props.product[0]}
+          {props.product.name}
         </span>
 
         <span>
-          quantity: {props.product[2]}
+          quantity: {props.product.quantity}
         </span>
 
         <div className="price">
           <span>
-            price: {props.product[1]}
+            price: {props.product.price}
           </span>
 
           <Button onClick={
-            () => props.removeFromCart(props.product[3])
+            () => props.removeFromCart(props.product.id)
           }>
             remove
           </Button>
