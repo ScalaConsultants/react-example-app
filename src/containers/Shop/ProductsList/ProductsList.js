@@ -1,10 +1,19 @@
 import React from 'react'
-import products from '../../data/products'
-import ListElement from './ListElement/ListElement'
+import products from '../../../lib/data/products'
+import ListElement from './ListItem/ListItem'
 import {connect} from 'react-redux'
 import { Link } from 'react-router-dom'
-import ProductsListStyle from './ProductListStyle'
 import {SortTypes} from '../Filters/actionTypes'
+import styled from 'styled-components'
+
+// language=SCSS prefix=dummy{ suffix=}
+const ProductsListStyle = styled.div`
+    background-color: rgb(221,221,221);
+    padding: 15px 0;
+    & ul{
+      padding: 0 20px;
+    }
+`
 
 const mapStateTopProps = (state) => ({
   sortProductsType:state.sortProducts.sortProductsType
@@ -21,11 +30,18 @@ const ProductsList = (props) => {
     }
   }
 
-  const productsList = products.sort(sortProducts(props.sortProductsType)).map((product) =>
-    <Link key={product.id} to={`/${product.id}`}>
-      <ListElement product={product}/>
-    </Link>
-  )
+  const productsList =
+    products.sort(
+      sortProducts(props.sortProductsType)
+    ).map(
+      (product) =>
+        <Link
+          key={product.id}
+          to={`/${product.id}`}>
+          <ListElement
+            product={product}/>
+        </Link>
+    )
 
   return (
     <ProductsListStyle>

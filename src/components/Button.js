@@ -7,7 +7,7 @@ const Button = styled.button`
     border: 1px solid white;
     background-color: transparent;
     font-size: 16px;
-    box-shadow: ${props => props.active ? 'inset 0 0 4px 1px #848484' : 'none'};
+    box-shadow: ${props => props.isActive ? 'inset 0 0 4px 1px #848484' : 'none'};
     
     &:hover{
       box-shadow: inset 0 0 2px 1px #9b9b9b;
