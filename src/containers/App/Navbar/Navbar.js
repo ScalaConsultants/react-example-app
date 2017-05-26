@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom'
 
 // language=SCSS prefix=dummy{ suffix=}
 const NavbarStyle = styled.div`
+    position: fixed;
     height: 80px;
     background-color: rgb(24,24,24);
     width: 100%;
