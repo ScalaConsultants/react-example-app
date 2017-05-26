@@ -19,7 +19,7 @@ const mapStateTopProps = (state) => ({
   sortProductsType:state.sortProducts.sortProductsType
 })
 
-const ProductsList = (props) => {
+const ProductsList = ({sortProductsType}) => {
 
   function sortProducts(sortType){
     switch (sortType) {
@@ -32,7 +32,7 @@ const ProductsList = (props) => {
 
   const productsList =
     products.sort(
-      sortProducts(props.sortProductsType)
+      sortProducts(sortProductsType)
     ).map(
       (product) =>
         <Link

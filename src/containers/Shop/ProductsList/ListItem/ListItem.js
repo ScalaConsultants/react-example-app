@@ -38,16 +38,16 @@ const ListElementStyle = styled.li`
     }
 `
 
-const ListElement = (props) => {
+const ListElement = ({product}) => {
 
-  const category = categories.find(category => category.id === props.product.category).name
+  const category = categories.find(category => category.id === product.category).name
 
   return (
       <ListElementStyle>
         <div className="image"/>
         <div className="content">
-          <h3>{props.product.name}</h3>
-          <p>price: {props.product.price}</p>
+          <h3>{product.name}</h3>
+          <p>price: {product.price}</p>
           <p>category: {category}</p>
         </div>
       </ListElementStyle>

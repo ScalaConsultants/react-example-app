@@ -9,24 +9,24 @@ const mapDispatchToProps = (dispatch) => {
   }
 }
 
-const CartItem = (props) => {
+const CartItem = ({product, removeFromCart}) => {
     return (
       <li>
         <span className="productName">
-          {props.product.name}
+          {product.name}
         </span>
 
         <span>
-          quantity: {props.product.quantity}
+          quantity: {product.quantity}
         </span>
 
         <div className="price">
           <span>
-            price: {props.product.price}
+            price: {product.price}
           </span>
 
           <Button onClick={
-            () => props.removeFromCart(props.product.id)
+            () => removeFromCart(product.id)
           }>
             remove
           </Button>

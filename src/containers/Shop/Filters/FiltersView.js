@@ -9,18 +9,18 @@ const FilterStyle = styled.div`
     padding: 0 40px;
 `
 
-const FiltersView = (props) => {
+const FiltersView = ({sortType, sortPriceAsc, sortPriceDes}) => {
     return (
       <FilterStyle>
         <span>Sort by price:</span>
 
-        <Button isActive={props.sortType === 'PRICE_ASC'}
-                onClick={() => props.sortPriceAsc()}>
+        <Button isActive={sortType === 'PRICE_ASC'}
+                onClick={() => sortPriceAsc()}>
           Lowest
         </Button>
 
-        <Button isActive={props.sortType === 'PRICE_DES'}
-                onClick={() => props.sortPriceDes()}>
+        <Button isActive={sortType === 'PRICE_DES'}
+                onClick={() => sortPriceDes()}>
           Highest
         </Button>
 

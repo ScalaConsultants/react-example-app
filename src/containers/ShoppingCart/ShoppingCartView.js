@@ -21,21 +21,21 @@ const ShoppingCartList = styled.ul`
     }
 `
 
-const ShoppingCartView = (props) => {
+const ShoppingCartView = ({sum, products}) => {
     return (
       <Screen>
         <h2>Your Shopping Cart:</h2>
 
         <ShoppingCartList>
 
-          {props.products.length!== 0 ? props.products.map(
+          {products.length!== 0 ? products.map(
             product =>
               <CartItem key={product.id} product={product}/>
           ) : <li>Cart is empty</li>}
 
           <li>
             <div className="price">
-              Total:{props.sum}
+              Total:{sum}
             </div>
           </li>
         </ShoppingCartList>

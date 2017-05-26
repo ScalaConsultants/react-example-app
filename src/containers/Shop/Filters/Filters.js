@@ -12,12 +12,12 @@ const mapDispatchToProps = (dispatch) => {
     setProductsSort: (sortType) => dispatch(setProductsSort(sortType))
   }
 }
-const Filters = (props) => {
+const Filters = ({setProductsSort, sortType}) => {
     return (
       <FiltersView
-        sortType={props.sortType}
-        sortPriceAsc={() => props.setProductsSort('PRICE_ASC')}
-        sortPriceDes={() => props.setProductsSort('PRICE_DES')}
+        sortType={sortType}
+        sortPriceAsc={() => setProductsSort('PRICE_ASC')}
+        sortPriceDes={() => setProductsSort('PRICE_DES')}
         />
     )
 }
