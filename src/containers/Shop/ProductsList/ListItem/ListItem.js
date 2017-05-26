@@ -6,9 +6,9 @@ import styled from 'styled-components'
 const ListElementStyle = styled.li`
     background-color: rgb(221,221,221);
     margin: 5px auto;
-    width: 90vw;
+    width: 100%;
     height: 24vw;
-    padding: 2vw;
+
 
     &:hover {
       background-color: rgb(174, 174, 174);
@@ -32,7 +32,8 @@ const ListElementStyle = styled.li`
       font-size: 4.2vw;
       font-weight: 600;
       color: black;
-      margin-bottom: 7vw;
+      margin-top: 2vw;
+      margin-bottom: 4vw;
     }
 
     & span{
@@ -44,7 +45,6 @@ const ListElementStyle = styled.li`
     }
     
     @media (min-width: 768px) {
-      width: 70vw;
       height: 14vw;
 
       & img{

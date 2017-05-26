@@ -4,12 +4,6 @@ import ListElement from './ListItem/ListItem'
 import {connect} from 'react-redux'
 import { Link } from 'react-router-dom'
 import {SortTypes} from '../Filters/actionTypes'
-import styled from 'styled-components'
-
-// language=SCSS prefix=dummy{ suffix=}
-const ProductsListStyle = styled.div`
-
-`
 
 const mapStateTopProps = (state) => ({
   sortProductsType:state.sortProducts.sortProductsType
@@ -40,11 +34,9 @@ const ProductsList = ({sortProductsType}) => {
     )
 
   return (
-    <ProductsListStyle>
-      <ul>
-      {productsList}
-      </ul>
-    </ProductsListStyle>
+    <ul>
+    {productsList}
+    </ul>
   )
 }
 

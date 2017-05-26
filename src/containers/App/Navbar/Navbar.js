@@ -6,35 +6,42 @@ import { Link } from 'react-router-dom'
 const NavbarStyle = styled.div`
     height: 80px;
     background-color: rgb(24,24,24);
-    padding:0 180px;
+    width: 100%;
+    
+    @media (min-width: 768px) {
+      div{
+        width: 70vw;
+        margin:0 auto;
+      }
+    }
 `
 
 // language=SCSS prefix=dummy{ suffix=}
 const CartButton = styled.img`
-    margin:8px;
     float:right;
+    margin:6px;
 `
 
 // language=SCSS prefix=dummy{ suffix=}
 const Logo = styled.span`
     color: rgb(255, 255, 255);
-    font-size: 46px;
+    font-size: 42px;
     float: left;
-    margin: 15px 0;
+    margin: 16px;
 `
 
 const Navbar = () => {
     return (
       <NavbarStyle>
+        <div>
+          <Link to='/'>
+            <Logo>LOGO</Logo>
+          </Link>
 
-        <Link to='/'>
-          <Logo>SHOP NAME</Logo>
-        </Link>
-
-        <Link to='/cart'>
-          <CartButton src="../../lib/images/cart.png"/>
-        </Link>
-
+          <Link to='/cart'>
+            <CartButton src="../../lib/images/cart.png"/>
+          </Link>
+        </div>
       </NavbarStyle>
     )
 }
