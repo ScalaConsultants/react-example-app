@@ -7,37 +7,93 @@ import styled from 'styled-components'
 
 // language=SCSS prefix=dummy{ suffix=}
 const ShoppingCartList = styled.ul`
+
+    padding-top: 2vw;
+    font-size: 4.5vw;
+    
+    & p{
+      fontSize: 6vw;
+      fontWeight: 600;
+      textAlign: center;
+      padding-bottom: 2vw;
+    }
+
     & li{
-      font-size: 20px;
+      height: 20vw;
       border-bottom: 1px black solid;
     }
-    & .productName{
-      font-size:24px;
-      margin-right: 100px;
-      float: left;
+
+    & li:last-of-type{
+      border-bottom: none;
     }
+
     & .price{
       float:right;
+    }
+
+    & span{
+      display:block;
+      text-align: center;
+    }
+    
+    & .tags{
+      display: none;
+    }
+
+    @media (min-width: 768px) {
+      font-size: 1.6vw;
+
+      & span{
+        width: 27%;
+        display:inline-block;
+        text-align: left;
+      }
+      
+      & p{
+        fontSize: 2vw;
+      }
+
+      & li{
+        height: 4vw;
+      }
+      
+      .tags{
+        display:block;
+      }
     }
 `
 
 const ShoppingCartView = ({sum, products}) => {
+
+  const isProduct = products.length!== 0
+
     return (
       <Screen>
-        <h2>Your Shopping Cart:</h2>
-
         <ShoppingCartList>
+          <p>Your Shopping Cart</p>
 
-          {products.length!== 0 ? products.map(
-            product =>
-              <CartItem key={product.id} product={product}/>
-          ) : <li>Cart is empty</li>}
+          {isProduct ?
+            <li className="tags">
+              <span>product</span>
+              <span>quantity</span>
+              <span>price</span>
+            </li> :
+            <li style={{textAlign:'center'}}>Cart is empty</li>}
 
-          <li>
-            <div className="price">
-              Total:{sum}
-            </div>
-          </li>
+          {isProduct ? products.map(
+              product =>
+                <CartItem key={product.id} product={product}/>
+            ) : false
+           }
+
+          {isProduct ?
+            <li>
+              <div className="price">
+                Total:{sum}
+              </div>
+            </li> : false
+          }
+
         </ShoppingCartList>
 
         <Link to='/'>
