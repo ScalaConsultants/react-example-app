@@ -4,22 +4,12 @@ import ListElement from './ListItem/ListItem'
 import {connect} from 'react-redux'
 import { Link } from 'react-router-dom'
 import {SortTypes} from '../Filters/actionTypes'
-import styled from 'styled-components'
-
-// language=SCSS prefix=dummy{ suffix=}
-const ProductsListStyle = styled.div`
-    background-color: rgb(221,221,221);
-    padding: 15px 0;
-    & ul{
-      padding: 0 20px;
-    }
-`
 
 const mapStateTopProps = (state) => ({
   sortProductsType:state.sortProducts.sortProductsType
 })
 
-const ProductsList = (props) => {
+const ProductsList = ({sortProductsType}) => {
 
   function sortProducts(sortType){
     switch (sortType) {
@@ -32,7 +22,7 @@ const ProductsList = (props) => {
 
   const productsList =
     products.sort(
-      sortProducts(props.sortProductsType)
+      sortProducts(sortProductsType)
     ).map(
       (product) =>
         <Link
@@ -44,11 +34,9 @@ const ProductsList = (props) => {
     )
 
   return (
-    <ProductsListStyle>
-      <ul>
-      {productsList}
-      </ul>
-    </ProductsListStyle>
+    <ul>
+    {productsList}
+    </ul>
   )
 }
 

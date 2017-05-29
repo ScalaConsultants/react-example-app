@@ -2,38 +2,41 @@ import React from 'react'
 import {connect} from 'react-redux'
 import {removeFromCart} from '../actionCreators'
 import Button from '../../../components/Button'
+import styled from 'styled-components'
 
+// language=SCSS prefix=dummy{ suffix=}
+const CartItemStyle = styled.li`
+  padding: 1vw 0;
+`
 const mapDispatchToProps = (dispatch) => {
   return {
     removeFromCart: (product) => dispatch(removeFromCart(product))
   }
 }
 
-const CartItem = (props) => {
+
+const CartItem = ({product, removeFromCart}) => {
     return (
-      <li>
+      <CartItemStyle>
         <span className="productName">
-          {props.product.name}
+          {product.name}
         </span>
 
         <span>
-          quantity: {props.product.quantity}
+          {product.quantity}
         </span>
 
-        <div className="price">
-          <span>
-            price: {props.product.price}
-          </span>
+        <span>
+          {product.price} zł
+        </span>
 
-          <Button onClick={
-            () => props.removeFromCart(props.product.id)
-          }>
-            remove
-          </Button>
+        <Button onClick={
+          () => removeFromCart(product.id)
+        }>
+          remove
+        </Button>
 
-        </div>
-        <div style={{clear:'both'}}/>
-      </li>
+      </CartItemStyle>
     )
 }
 

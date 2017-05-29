@@ -4,51 +4,80 @@ import styled from 'styled-components'
 
 // language=SCSS prefix=dummy{ suffix=}
 const ListElementStyle = styled.li`
-    font-size: 20px;
-    margin: 20px 0;
-    padding: 20px;
-    border: black 2px solid;
-    height: 100px;
+    background-color: rgb(221,221,221);
+    margin: 5px auto;
+    width: 100%;
+    height: 24vw;
+
 
     &:hover {
       background-color: rgb(174, 174, 174);
     }
 
-    & .image {
-      width: 100px;
-      height: 100px;
-      background-color: #ffecd8;
-      text-align: center;
+    & img{
+      width: 24vw;
+      height: auto;
+      display: block;
+      float: left;
+    }
+
+    & div{
       float:left;
+      width: 54vw;
+      padding: 0 6vw;
     }
-
-    & .content{
-      float:left;
-      margin-left: 80px;
-    }
-
-    & h3{
-      margin: 0;
-      text-align: left;
-      color: black;
-    }
-
+    
     & p{
+      text-align: center;
+      font-size: 4.2vw;
+      font-weight: 600;
+      color: black;
+      margin-top: 2vw;
+      margin-bottom: 4vw;
+    }
+
+    & span{
       color:black;
+      font-size: 4vw;
+    }
+    & span:last-child{
+      float:right;
+    }
+    
+    @media (min-width: 768px) {
+      height: 14vw;
+
+      & img{
+        width: 14vw;
+      }
+      
+      & div{
+        width: 44vw;
+        padding: 0 6vw;
+      }
+
+      & p{
+        font-size: 2.6vw;
+      }
+
+      & span{
+        font-size: 2vw;
+      }
     }
 `
 
-const ListElement = (props) => {
+const ListElement = ({product}) => {
 
-  const category = categories.find(category => category.id === props.product.category).name
+  const category = categories.find(category => category.id === product.category).name
 
   return (
       <ListElementStyle>
-        <div className="image"/>
-        <div className="content">
-          <h3>{props.product.name}</h3>
-          <p>price: {props.product.price}</p>
-          <p>category: {category}</p>
+        <img height="200" width="200" src="https://unsplash.it/200/200/?random"/>
+
+        <div>
+          <p>{product.name}</p>
+          <span>category: {category}</span>
+          <span>{product.price} zł</span>
         </div>
       </ListElementStyle>
     )

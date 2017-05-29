@@ -1,12 +1,11 @@
-require('normalize.css/normalize.css')
-require('./App.css')
-
 import React from 'react'
 import Navbar from './Navbar/Navbar'
 import { Switch, Route } from 'react-router-dom'
-import Shop from '../containers/Shop/Shop'
-import ShoppingCart from '../containers/ShoppingCart/ShoppingCart'
-import ProductDetails from '../containers/ProductDetails/ProductDetails'
+import 'normalize.css/normalize.css'
+import './App.css'
+import Shop from '../../containers/Shop/Shop'
+import ShoppingCart from '../../containers/ShoppingCart/ShoppingCart'
+import ProductDetails from '../../containers/ProductDetails/ProductDetails'
 
 //let yeomanImage = require('../../images/yeoman.png');
 

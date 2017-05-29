@@ -2,23 +2,63 @@ import React from 'react'
 import Screen from '../../components/Screen'
 import Button from '../../components/Button'
 import { Link } from 'react-router-dom'
+import styled from 'styled-components'
 
-const ProductDetailsView = (props) => {
+// language=SCSS prefix=dummy{ suffix=}
+const ProductDetailsStyle = styled.div`
+  padding: 0 4vw;
+  & img{
+    margin: 0 auto;
+    display: block;
+  }
+  
+  & p:first-of-type{
+    text-align: center;
+    font-size: 4vh;
+    font-weight: 600;
+  }
+
+   & p{
+     margin: 4vw 0;
+   }
+
+  & p,span{
+    font-size: 3vh;
+  }
+
+  & span:first-of-type, Button:last-of-type{
+    float: right;
+  }
+  
+  Button:first-child{
+    float: left;
+  }
+
+  @media (min-width: 768px) {
+    & p{
+      margin: 2vw 0;
+    }
+  }
+`
+
+const ProductDetailsView = ({product, category, addToCart}) => {
     return (
       <Screen>
-        <h3>{props.product.name}</h3>
+        <ProductDetailsStyle>
+          <img height="200" width="200" src="https://unsplash.it/200/200/?random"/>
+          <p>{product.name}</p>
+          <span>{product.price} zł</span>
+          <span>Category: {category}</span>
+          <p>Description: {product.desc}</p>
 
-        <p>Price: {props.product.price}</p>
-        <p>Category: {props.category}</p>
-        <p>Description: {props.product.desc}</p>
+          <Link to='/'>
+            <Button>Back to shop</Button>
+          </Link>
 
-        <Button onClick={() => props.addToCart()}>
-          Add to cart
-        </Button>
-
-        <Link to='/'>
-          <Button>Back to shop</Button>
-        </Link>
+          <Button onClick={() => addToCart()}>
+            Add to cart
+          </Button>
+        </ProductDetailsStyle>
       </Screen>
     )
 }

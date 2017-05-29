@@ -7,11 +7,11 @@ const mapStateTopProps = (state) => ({
   productsInCart:state.shoppingCart.productsInCart
 })
 
-const ShoppingCart = (props) => {
+const ShoppingCart = ({productsInCart}) => {
 
   const products = []
 
-  props.productsInCart.map(
+  productsInCart.map(
     id => products.find(
       product => product.id === id
     ) ? products.find(product => product.id === id).quantity++ : products.push({id,quantity:1})
