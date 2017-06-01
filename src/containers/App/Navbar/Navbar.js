@@ -40,7 +40,7 @@ const Navbar = () => {
           </Link>
 
           <Link to='/cart'>
-            <CartButton src="../../lib/images/cart.png"/>
+            <CartButton src="../../src/lib/images/cart.png"/>
           </Link>
         </div>
       </NavbarStyle>
