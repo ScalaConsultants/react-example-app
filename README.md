@@ -8,8 +8,8 @@ This project is example app for people who start learning React. It's simple onl
 
 * React 15
 * Redux
-* webpack
 * Apollo client
+* webpack 2
 * Babel
 * ESLint
 * Styled Components
