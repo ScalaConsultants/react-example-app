@@ -63,7 +63,7 @@ const ShoppingCartList = styled.ul`
     }
 `
 
-const ShoppingCartView = ({sum, products}) => {
+const ShoppingCartView = ({ products }) => {
 
   const isProduct = products.length!== 0
 
@@ -89,7 +89,7 @@ const ShoppingCartView = ({sum, products}) => {
           {isProduct ?
             <li>
               <div className="price">
-                Total:{sum}
+                Total:
               </div>
             </li> : false
           }

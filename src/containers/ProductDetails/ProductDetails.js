@@ -1,8 +1,7 @@
 import React from 'react'
-import products from '../../lib/data/products'
-import categories from '../../lib/data/categories'
 import {connect} from 'react-redux'
 import {addToCart} from '../ShoppingCart/actionCreators'
+import { gql, graphql } from 'react-apollo'
 import ProductsDetailsView from './ProductDetailsView'
 
 const mapDispatchToProps = (dispatch) => {
@@ -11,18 +10,38 @@ const mapDispatchToProps = (dispatch) => {
   }
 }
 
-const ProductDetails = (props) => {
+const ProductDetails = ({data, addToCart}) => {
 
-  const id = parseInt(props.match.params.id, 10)
-  const product = products.find(product => product.id === id)
-  const category = categories.find(category => category.id === product.category).name
+  if(data.loading){
+    return <div>LOADING</div>
+  }
 
   return (
     <ProductsDetailsView
-      product={product}
-      category={category}
-      addToCart={()=> props.addToCart(product.id)}/>
+      product={data.Product}
+      addToCart={()=> addToCart(data.Product.id)}/>
     )
 }
 
-export default connect(null,mapDispatchToProps)(ProductDetails)
+const productDetails = gql`
+  query ProductQuery($id: ID!){
+    Product(id: $id) { 
+      id
+      name
+      price
+      desc
+      category {
+        name
+      }
+    }
+  }`
+
+const ProductDetailsData = graphql(productDetails, {
+  options: (ownProps) => ({
+    variables: {
+      id: ownProps.match.params.id
+    }
+  })
+})(ProductDetails)
+
+export default connect(null,mapDispatchToProps)(ProductDetailsData)
