@@ -5,9 +5,9 @@
   "scripts": {
     "build": "npm run clean && npm run copy && webpack",
     "clean": "rimraf dist/*",
-    "copy": "copyfiles -f ./index.html ./src/favicon.ico ./dist && copyfiles -f ./src/lib/images/*.png ./dist/images && copyfiles -f ./src/lib/data/*.js ./dist/data ",
+    "copy": "copyfiles -f ./index.html ./src/favicon.ico ./dist && copyfiles -f ./src/lib/images/*.png ./dist/images",
     "lint": "eslint ./src",
-    "start": "webpack-dev-server --hot"
+    "start": "webpack-dev-server --hot --open"
   },
   "devDependencies": {
     "babel-core": "^6.0.0",
