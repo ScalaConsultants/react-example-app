@@ -1,5 +1,4 @@
 import React from 'react'
-import products from '../../../lib/data/products'
 import ListElement from './ListItem/ListItem'
 import {connect} from 'react-redux'
 import { Link } from 'react-router-dom'
@@ -10,7 +9,7 @@ const mapStateTopProps = (state) => ({
   sortProductsType:state.sortProducts.sortProductsType
 })
 
-const ProductsList = (props) => {
+const ProductsList = ({sortProductsType, data}) => {
 
   function sortProducts(sortType){
     switch (sortType) {
@@ -21,9 +20,17 @@ const ProductsList = (props) => {
     }
   }
 
+  if(data.loading){
+    return <div>LOADING</div>
+  }
+
+  const products = []
+
+  data.allProducts.map( product => products.push(product))
+
   const productsList =
     products.sort(
-      sortProducts(props.sortProductsType)
+      sortProducts(sortProductsType)
     ).map(
       (product) =>
         <Link
@@ -36,7 +43,7 @@ const ProductsList = (props) => {
 
   return (
     <ul>
-    {productsList}{console.log(props.data.allProducts)}
+    {productsList}
     </ul>
   )
 }
@@ -44,6 +51,7 @@ const ProductsList = (props) => {
 const productInfo = gql`
   query {
     allProducts { 
+      id
       name
       price
       category {

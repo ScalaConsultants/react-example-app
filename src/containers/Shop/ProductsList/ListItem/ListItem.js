@@ -1,5 +1,4 @@
 import React from 'react'
-import categories from '../../../../lib/data/categories'
 import styled from 'styled-components'
 
 // language=SCSS prefix=dummy{ suffix=}
@@ -68,15 +67,13 @@ const ListElementStyle = styled.li`
 
 const ListElement = ({product}) => {
 
-  const category = categories.find(category => category.id === product.category).name
-
   return (
       <ListElementStyle>
         <img height="200" width="200" src="https://unsplash.it/200/200/?random"/>
 
         <div>
           <p>{product.name}</p>
-          <span>category: {category}</span>
+          <span>category: {product.category.name}</span>
           <span>{product.price} zł</span>
         </div>
       </ListElementStyle>
