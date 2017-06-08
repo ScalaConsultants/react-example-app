@@ -41,8 +41,17 @@ const ProductsList = (props) => {
   )
 }
 
-const MyQuery = gql`query { allProducts { name } }`
+const productInfo = gql`
+  query {
+    allProducts { 
+      name
+      price
+      category {
+        name
+      }
+    }
+  }`
 
-const MyComponentWithData = graphql(MyQuery)(ProductsList)
+const ProductsListData = graphql(productInfo)(ProductsList)
 
-export default connect(mapStateTopProps)(MyComponentWithData)
+export default connect(mapStateTopProps)(ProductsListData)
