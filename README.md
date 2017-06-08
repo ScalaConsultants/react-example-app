@@ -16,6 +16,10 @@ This project is example app for people who start learning React. It's simple onl
 
 ## TODO
 
+### Bugs
+
+* [ ] total sum in shopping cart isn't working now
+
 ### Features
 
 * [ ] possibility to chose how many products add to cart
