@@ -4,12 +4,13 @@ import ListElement from './ListItem/ListItem'
 import {connect} from 'react-redux'
 import { Link } from 'react-router-dom'
 import {SortTypes} from '../Filters/actionTypes'
+import { gql, graphql } from 'react-apollo'
 
 const mapStateTopProps = (state) => ({
   sortProductsType:state.sortProducts.sortProductsType
 })
 
-const ProductsList = ({sortProductsType}) => {
+const ProductsList = (props) => {
 
   function sortProducts(sortType){
     switch (sortType) {
@@ -22,7 +23,7 @@ const ProductsList = ({sortProductsType}) => {
 
   const productsList =
     products.sort(
-      sortProducts(sortProductsType)
+      sortProducts(props.sortProductsType)
     ).map(
       (product) =>
         <Link
@@ -35,9 +36,13 @@ const ProductsList = ({sortProductsType}) => {
 
   return (
     <ul>
-    {productsList}
+    {productsList}{console.log(props.data.allProducts)}
     </ul>
   )
 }
 
-export default connect(mapStateTopProps)(ProductsList)
+const MyQuery = gql`query { allProducts { name } }`
+
+const MyComponentWithData = graphql(MyQuery)(ProductsList)
+
+export default connect(mapStateTopProps)(MyComponentWithData)
