@@ -1,4 +1,4 @@
-![](https://img.shields.io/badge/version-0.0.5-blue.svg)
+![](https://img.shields.io/badge/version-0.0.6-blue.svg)
 
 # Example React App - Online shop
 
@@ -8,12 +8,17 @@ This project is example app for people who start learning React. It's simple onl
 
 * React 15
 * Redux
+* Apollo client
 * webpack 2
 * Babel
 * ESLint
 * Styled Components
 
 ## TODO
+
+### Bugs
+
+* [ ] total sum in shopping cart isn't working now
 
 ### Features
 

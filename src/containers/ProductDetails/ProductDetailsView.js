@@ -41,14 +41,14 @@ const ProductDetailsStyle = styled.div`
   }
 `
 
-const ProductDetailsView = ({product, category, addToCart}) => {
+const ProductDetailsView = ({product, addToCart}) => {
     return (
       <Screen>
         <ProductDetailsStyle>
           <img height="200" width="200" src="https://unsplash.it/200/200/?random"/>
           <p>{product.name}</p>
           <span>{product.price} zł</span>
-          <span>Category: {category}</span>
+          <span>Category: {product.category.name}</span>
           <p>Description: {product.desc}</p>
 
           <Link to='/'>
