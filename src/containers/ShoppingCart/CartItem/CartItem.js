@@ -3,7 +3,6 @@ import {connect} from 'react-redux'
 import {removeFromCart} from '../actionCreators'
 import Button from '../../../components/Button'
 import styled from 'styled-components'
-import { gql, graphql } from 'react-apollo'
 
 // language=SCSS prefix=dummy{ suffix=}
 const CartItemStyle = styled.li`
@@ -16,11 +15,11 @@ const mapDispatchToProps = (dispatch) => {
 }
 
 
-const CartItem = ({product, removeFromCart, data}) => {
+const CartItem = ({product, removeFromCart}) => {
     return (
       <CartItemStyle>
         <span className="productName">
-          {data.Product.name}
+          {product.name}
         </span>
 
         <span>
@@ -28,11 +27,11 @@ const CartItem = ({product, removeFromCart, data}) => {
         </span>
 
         <span>
-          {data.Product.price} zł
+          {product.price} zł
         </span>
 
         <Button onClick={
-          () => removeFromCart(data.Product.id)
+          () => removeFromCart(product.id)
         }>
           remove
         </Button>
@@ -41,21 +40,4 @@ const CartItem = ({product, removeFromCart, data}) => {
     )
 }
 
-const productInCart = gql`
-  query ProductInCartQuery($id: ID!){
-    Product(id: $id) { 
-      id
-      name
-      price
-    }
-  }`
-
-const ProductInCart = graphql(productInCart, {
-  options: (ownProps) => ({
-    variables: {
-      id: ownProps.product.id
-    }
-  })
-})(CartItem)
-
-export default connect(null,mapDispatchToProps)(ProductInCart)
+export default connect(null,mapDispatchToProps)(CartItem)
