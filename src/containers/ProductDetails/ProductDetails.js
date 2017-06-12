@@ -23,7 +23,7 @@ const ProductDetails = ({data, addToCart}) => {
     )
 }
 
-const productDetails = gql`
+const productDetailsQuery = gql`
   query ProductQuery($id: ID!){
     Product(id: $id) { 
       id
@@ -36,7 +36,7 @@ const productDetails = gql`
     }
   }`
 
-const ProductDetailsData = graphql(productDetails, {
+const ProductDetailsData = graphql(productDetailsQuery, {
   options: (ownProps) => ({
     variables: {
       id: ownProps.match.params.id
