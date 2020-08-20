@@ -35,3 +35,5 @@ This project is example app for people who start learning React. It's simple onl
 
 * [ ] change favicon
 * [ ] improve general app style
+
+Developed by [Scalac](https://scalac.io/?utm_source=scalac_github&utm_campaign=scalac1&utm_medium=web)
