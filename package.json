@@ -19,7 +19,7 @@
     "babel-preset-stage-0": "^6.5.0",
     "copyfiles": "^1.2.0",
     "css-loader": "^0.28.4",
-    "eslint": "^3.0.0",
+    "eslint": "^4.19.1",
     "eslint-loader": "^1.0.0",
     "eslint-plugin-react": "^7.0.1",
     "file-loader": "^0.11.1",
